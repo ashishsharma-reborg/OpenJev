@@ -5,4 +5,39 @@ dist
 *.log
 .DS_Store
 .vite/*temp*
-package-lock.json
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
+
+# --- workspace hygiene: agent-tool local state, bytecode, scratch ---
+.claude/
+.cursor/
+.codex/
+.gemini/
+.grok/
+.kiro/
+.windsurf/
+.opencode/
+opencode.json
+CLAUDE.local.md
+.codex-pytest-*
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+.worktrees/
+.superpowers/
+.agent-churn-control/
+.tmp-*
+.cache/
+.playwright-mcp/
+
+# --- agent workspace rule files: mirrored per-repo, not committed ---
+.agents/
+CLAUDE.md
+
+# --- per-repo agent rule files: mirrored, not committed ---
+.github/copilot-instructions.md
+AGENTS.md
+GEMINI.md
